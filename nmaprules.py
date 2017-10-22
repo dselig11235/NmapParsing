@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+import re
+
 class Classifier:
     pass
 
