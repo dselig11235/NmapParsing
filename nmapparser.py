@@ -11,6 +11,13 @@ def help():
 if len(argv) == 0:
     help()
 
+if(argv[1] == "-t"):
+    type=argv[2]
+    files = argv[3:]
+else:
+    type="gnmap"
+    files = argv[1:]
+
 results = NmapResults()
-results.open(argv[1:])
+results.open(files, type=type)
 results.prettyPrint()
