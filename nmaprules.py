@@ -25,6 +25,14 @@ def initialize(rec):
 def isDns(rec):
     return rec[2] == "domain" or rec[1].startswith('53/')
 
+@classifier('ftp')
+def isFtp(rec):
+    return rec[1] == '21/tcp' or rec[2] == 'ftp'
+
+@classifier('msrpc')
+def isMSRPC(rec):
+    return rec[2] == 'msrpc'
+
 @classifier('ike')
 def isIke(rec):
     return rec[1].startswith('500/')
