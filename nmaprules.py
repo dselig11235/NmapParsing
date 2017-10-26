@@ -47,8 +47,12 @@ def isMSRPC(rec):
 def isNBT(rec):
     return rec[1] == '139/tcp'
 
+@classifier('nfs')
+def isNFS(rec):
+    return rec[1].startswith('111/')
+
 @classifier('smb')
-def isNBT(rec):
+def isSMB(rec):
     return rec[1] == '445/tcp'
 
 @classifier('ldap')
@@ -80,19 +84,19 @@ def isSip(rec):
     return rec[1] == '3389/tcp'
 
 @classifier('mssql')
-def isSip(rec):
+def isMSSQL(rec):
     return rec[1] == '1443/tcp'
 
 @classifier('mysql')
-def isSip(rec):
+def isMySQL(rec):
     return rec[1] == '3306/tcp'
 
 @classifier('oracle')
-def isSip(rec):
+def isOracle(rec):
     return rec[1] == '1521/tcp'
 
 @classifier('postgres')
-def isSip(rec):
+def isPostgres(rec):
     return rec[1] == '5432/tcp'
 
 @classifier('ssl')
