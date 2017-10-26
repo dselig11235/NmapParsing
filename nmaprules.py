@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+import re
+
+
 class Classifier:
     pass
 
@@ -72,6 +75,26 @@ def isSmtp(rec):
 @classifier('snmp')
 def isSnmp(rec):
     return rec[1].startswith('161/udp') or rec[2] == 'snmp'
+
+@classifier('rdp')
+def isSip(rec):
+    return rec[1] == '3389/tcp'
+
+@classifier('mssql')
+def isSip(rec):
+    return rec[1] == '1443/tcp'
+
+@classifier('mysql')
+def isSip(rec):
+    return rec[1] == '3306/tcp'
+
+@classifier('oracle')
+def isSip(rec):
+    return rec[1] == '1521/tcp'
+
+@classifier('postgres')
+def isSip(rec):
+    return rec[1] == '5432/tcp'
 
 @classifier('ssl')
 def isSsl(rec):
