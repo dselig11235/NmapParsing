@@ -2,7 +2,6 @@
 
 import re
 
-
 class Classifier:
     pass
 
